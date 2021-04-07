@@ -1,35 +1,30 @@
 export default [
   {
-    id: 1,
-    name: "Arttu Pyykönen",
-    age: 25,
-    birthday: "1999-3-22",
+    id: 96,
+    name: "Paul Rudd",
+    birthday: "April 6, 1969 23:59:59",
     image:
-      "https://rahavelho.fi/wp-content/uploads/2021/01/IMG_0231-2-min-scaled-e1610550997716.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Paul_Rudd_Ant-Man_%26_The_Wasp_premiere.jpg/440px-Paul_Rudd_Ant-Man_%26_The_Wasp_premiere.jpg",
+    info:
+      "American actor, screenwriter, and producer. Best known for his roles in Clueless and as Scott Lang / Ant-Man in the Marvel Cinematic Universe.",
   },
   {
-    id: 2,
-    name: "Akseli Puumalainen",
-    age: 22,
-    birthday: "1999-2-1",
+    id: 97,
+    name: "Jackie Chan",
+    twitter: "EyeOfJackieChan",
+    birthday: "April 7, 1954 23:59:59",
     image:
-      "https://rahavelho.fi/wp-content/uploads/2021/01/Akseli-Puumalainen-scaled-e1610547368281.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/8b/Jackie_Chan_July_2016.jpg",
+    info:
+      "Hong Kong martial artist, actor, filmmaker, action choreographer, and singer. He has been acting since the 1960s and he has performed in more than 150 films. He is best known for his slapstick comedy and innovative stunts.",
   },
   {
-    id: 3,
-    name: "Elias Räinä",
-    age: 21,
-    birthday: "1999-9-20",
+    id: 98,
+    name: "Dean Norris",
+    birthday: "April 8, 1963 23:59:59",
     image:
-      "https://rahavelho.fi/wp-content/uploads/2021/01/Elias-Raina-min-scaled-e1610557332363.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Dean_Norris_by_Gage_Skidmore_3.jpg/440px-Dean_Norris_by_Gage_Skidmore_3.jpg",
+    info:
+      "American actor who is best known for his role as a DEA agent Hank Schrader on Breaking Bad.",
   },
-  {
-    id: 4,
-    name: "Pinja Repo",
-    age: 21,
-    birthday: "1999-4-15",
-    image:
-      "https://rahavelho.fi/wp-content/uploads/2021/01/Pinja-Repo-scaled-e1610547462382.jpg",
-  },
-
 ];

@@ -40,7 +40,8 @@ Variables
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   --max-width: 1170px;
-  --fixed-width: 450px;
+  --fixed-width: 650px;
+  --fixed-width-2: 800px;
   --clr-pink: #f28ab2;
   --clr-blue: rgba(65, 131, 215, 1);
 }
@@ -137,13 +138,14 @@ p {
 main {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .container {
-  width: 90vw;
-  margin: 5rem 0;
+  width: 80vw;
+  margin: 3rem 0;
   max-width: var(--fixed-width);
   background: var(--clr-white);
   border-radius: var(--radius);
@@ -154,6 +156,20 @@ main {
   font-weight: normal;
   text-transform: none;
   margin-bottom: 2rem;
+}
+.todayContainer {
+  width: 90vw;
+  margin: 3rem 0 0 0;
+  max-width: var(--fixed-width-2);
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--dark-shadow);
+}
+.todayContainer h2 {
+  font-weight: normal;
+  text-transform: none;
+  margin-bottom: 1rem;
 }
 .person {
   display: grid;
@@ -172,8 +188,32 @@ main {
 .person h4 {
   margin-bottom: 0.35rem;
 }
+
 .person p {
   margin-bottom: 0;
+}
+
+.todayPerson {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+.todayPerson img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: var(--light-shadow);
+  margin-right: 1rem;
+}
+.todayPerson h4 {
+  margin-bottom: 0.25rem;
+}
+.todayPerson p {
+  margin-bottom: 0;
+  padding-right: 1rem;
 }
 .container button {
   color: var(--clr-white);
