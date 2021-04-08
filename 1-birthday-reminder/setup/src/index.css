@@ -59,8 +59,8 @@ Global Styles
   box-sizing: border-box;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: var(--clr-blue);
   color: var(--clr-grey-9);
   line-height: 1.5;
@@ -157,20 +157,7 @@ main {
   text-transform: none;
   margin-bottom: 2rem;
 }
-.todayContainer {
-  width: 90vw;
-  margin: 3rem 0 0 0;
-  max-width: var(--fixed-width-2);
-  background: var(--clr-white);
-  border-radius: var(--radius);
-  padding: 1.5rem 2rem;
-  box-shadow: var(--dark-shadow);
-}
-.todayContainer h2 {
-  font-weight: normal;
-  text-transform: none;
-  margin-bottom: 1rem;
-}
+
 .person {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -192,13 +179,42 @@ main {
 .person p {
   margin-bottom: 0;
 }
+.todayContainer {
+  width: 90vw;
+  margin: 3rem 0 0 0;
+  max-width: var(--fixed-width-2);
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--dark-shadow);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header"
+    "body";
+}
+.todayContainer h2 {
+  font-weight: normal;
+  text-transform: none;
+  margin-bottom: 1rem;
+  grid-area: header;
+}
 
 .todayPerson {
+  grid-area: body;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "img nameAge nameAge nameAge"
+    "info info info info"
+    "footer footer footer footer";
   column-gap: 0.75rem;
   margin-bottom: 1.5rem;
+  margin-right: 2rem;
   align-items: center;
+  justify-items: center;
 }
 .todayPerson img {
   width: 150px;
@@ -206,26 +222,65 @@ main {
   object-fit: cover;
   border-radius: 50%;
   box-shadow: var(--light-shadow);
-  margin-right: 1rem;
+  margin-left: 1.5rem;
+  grid-area: img;
 }
-.todayPerson h4 {
-  margin-bottom: 0.25rem;
+
+.todayPersonNameAge {
+  grid-area: nameAge;
 }
+
 .todayPerson p {
-  margin-bottom: 0;
-  padding-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  grid-area: info;
 }
-.container button {
+.todayPersonFooter {
+  width: 100%;
+  display: grid;
+  grid-area: footer;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+  justify-items: stretch;
+  align-items: inital;
+  grid-template-areas: "twitter wiki";
+}
+
+.todayPerson p button {
+  background: transparent;
+  border-color: transparent;
+  text-transform: capitalize;
+  color: var(--clr-grey-6);
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding-left: 0.25rem;
+}
+
+.btn {
   color: var(--clr-white);
   display: block;
   width: 100%;
   border-color: transparent;
   background: var(--clr-blue);
-  margin: 2rem auto 0 auto;
+  margin: 2rem 1rem 0 1rem;
   text-transform: capitalize;
-  font-size: 1.2rem;
-  padding: 0.5rem 0;
+  font-size: 1rem;
+  padding: 0.3rem 0.3rem;
   letter-spacing: var(--spacing);
   border-radius: var(--radius);
   cursor: pointer;
+}
+
+.twitter-mention-button {
+  grid-area: twitter;
+  justify-self: center;
+  align-self: center;
+  margin: 2rem 1rem 0 1rem;
+}
+
+.wikiBtn {
+  grid-area: wiki;
+  justify-self: center;
+  background: var(--clr-grey-4);
+  text-align: center;
 }

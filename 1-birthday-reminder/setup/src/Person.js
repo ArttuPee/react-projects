@@ -18,11 +18,11 @@ const getDaysTo = (date) => {
 };
 
 const Person = (props) => {
-  const person = props.person
-  const wikiInfo = props.wikiInfo
-  const { id, name, twitter, birthday, image, info } = person;
+  const [readMore, setReadMore] = React.useState(false);
+  const person = props.person;
+  const wikiInfo = props.wikiInfo;
 
-
+  const { id, name, twitter, birthday, image } = person;
   let age = getAge(birthday);
   let birthDate = new Date(birthday);
   let daysToNextBD = getDaysTo(getNextBirthDay(person));
@@ -36,24 +36,39 @@ const Person = (props) => {
 
   if (daysToNextBD === 0) {
     let firstName = name.split(" ")[0];
-    let link = "https://twitter.com/intent/tweet?screen_name=" + twitter;
+    let twitterLink = "https://twitter.com/intent/tweet?screen_name=" + twitter;
     let text = "Happy birthday " + firstName + "!";
 
     return (
       <article key={id} className="todayPerson">
         <img src={image} alt={name} />
-        <div>
+        <div className="todayPersonNameAge">
           <h3>{name}</h3>
           <h4>{age} years old today</h4>
           <h4>{birthdayString}</h4>
-          <p>{wikiInfo ? wikiInfo : info}</p>
+        </div>
+        <p>
+          {readMore ? wikiInfo : `${wikiInfo.substring(0, 500)}...`}
+          <button onClick={() => setReadMore(!readMore)}>
+            {readMore ? "show less" : "read more"}
+          </button>
+        </p>
+        <div className="todayPersonFooter">
+          {twitter && (
+            <a
+              className="twitter-mention-button"
+              href={twitterLink}
+              data-size="large"
+              data-text={text}
+            >
+              Tweet @{twitter}
+            </a>
+          )}
           <a
-            className="twitter-mention-button"
-            href={link}
-            data-size="large"
-            data-text={text}
+            href={"https://en.wikipedia.org/wiki/" + name.replace(/ /g, "_")}
+            className="btn wikiBtn"
           >
-            Wish {firstName} a happy birthday!
+            <i className="fa fa-wikipedia-w" aria-hidden="true"></i> wikipedia
           </a>
         </div>
       </article>
